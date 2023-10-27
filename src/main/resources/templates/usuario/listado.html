@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${titulo}"></title>
+		<style>
+		table {
+			border-collapse: collapse;
+			margin: 0 auto;
+			/* Margen automático para centrar horizontalmente */
+
+		}
+
+		td,
+		th {
+			border: 1px solid darkgray;
+			padding: 8px;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1 th:text="${tituloH1}"></h1>
+	<a href="http://localhost:8080/home">Inicio</a>
+	<a th:href="@{/usuario/form}"> Nuevo Usuario</a>
+	<p th:text="'Total usuarios: ' +${usuarios.size}"></p>
+	
+	<table>
+		<theader>
+			<tr>				
+				<td>Id</td>
+				<td>Nombre</td>
+				<td>Email</td>
+				<td>Teléfono</td>
+				
+				
+				
+				
+			</tr>
+		</theader>
+		<tbody>
+			<tr th:each="usuario :${usuarios}">
+				<td th:text = "${usuario.id}"></td>
+				<td th:text = "${usuario.nombre}"></td>
+				<td th:text = "${usuario.email}"></td>
+				<td th:text = "${usuario.telefono}"></td>
+				<td>
+					<a th:href="@{/usuario/borrar/} + ${usuario.id}">Borrar</a>
+					<a th:href="@{/usuario/form/} + ${usuario.id}">Editar</a>
+					
+				</td>
+				
+			</tr>
+		</tbody>
+
+	</table>
+
+</body>
+
+</html>

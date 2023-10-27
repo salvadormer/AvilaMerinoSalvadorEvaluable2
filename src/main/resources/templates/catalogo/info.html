@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${titulo}"></title>
+		<style>
+		table {
+			border-collapse: collapse;
+			margin: 0 auto;
+			/* Margen automático para centrar horizontalmente */
+
+		}
+
+		td,
+		th {
+			border: 1px solid darkgray;
+			padding: 8px;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<a href="http://localhost:8080/home">Inicio</a>
+	
+	<a href="http://localhost:8080/libro">Listado de libros</a>
+	<br>
+	
+	
+	<h1 th:text="${tituloH1}"></h1>
+	<p th:text="${parrafo}"></p>
+	<br>
+<!--	<div style="float: right; margin-right: 100px;">
+    <img th:src="@{/image/carrie.jpg}" height="300" width="200">
+</div>-->
+		
+		<theader>
+			<tr>				
+		<div style="float: left; margin-left: 20px;">	
+			
+				
+				<td><b>Nombre:</b> </td><span th:text="${libro.nombre}"></span>
+				<br>
+				</br>
+				<td><b>Autor:</b> </td><span th:text="${libro.autor}"></span>
+				<br>
+				</br>
+				<td><b>Editorial:</b> </td><span th:text="${libro.editorial}"></span>
+				<br>
+				</br>
+				<td><b>Año:</b> </td><span th:text="${libro.ano}"></span>
+				<br>
+				</br>
+				<td><b>Sipnosis:</b> <span th:text="${libro.sinopsis}"></span>
+				</td>
+				<br>
+				</br>
+			</div>		
+			</tr>
+		</theader>
+	
+
+</body>
+
+</html>
